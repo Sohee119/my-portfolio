@@ -123,24 +123,31 @@ export const site = {
       status: "featured",
     },
     {
-      slug: "ai-phishing-email-detector",
-      name: "AI-Powered Phishing Email Detector",
+      slug: "ai-rinconada-translation-synthetic-data",
+      name: "AI-Driven Synthetic Data for Low-Resource Machine Translation: Enhancing Rinconada to English Translation",
       summary:
-        "An AI-assisted application that analyzes email content and identifies potential phishing or suspicious messages.",
+        "Enhancing Rinconada-to-English translation through synthetic data generation and specialized machine learning techniques for low-resource languages.",
       description:
-        "This project explores how AI APIs and straightforward web interfaces can help people inspect email text for common phishing signals. It is designed as a simple, explainable tool rather than a production security product.",
-      technologies: ["Python", "AI/API integration", "REST API", "Web technologies"],
-      features: [
-        "Email text analysis",
-        "Suspicious content detection",
-        "Risk classification",
-        "Explanation of detected indicators",
-        "Simple user-friendly interface",
+        "A thesis research project focused on addressing data scarcity in low-resource machine translation. By generating and filtering high-quality synthetic parallel text data, the system improves translation accuracy, context retention, and fluency when translating Rinconada dialect into English.",
+      technologies: [
+        "Python",
+        "Machine Learning",
+        "NLP",
+        "PyTorch",
+        "Hugging Face",
+        "Synthetic Data Generation",
       ],
-      image: "/projects/phishing-detector.svg",
-      githubUrl: "",
+      features: [
+        "Synthetic parallel corpus generation",
+        "Low-resource Neural Machine Translation (NMT)",
+        "Rinconada-to-English translation pipeline",
+        "Dataset cleaning and quality validation",
+        "Model performance evaluation (BLEU / chrF)",
+      ],
+      image: "/projects/rinconada-translation.svg",
+      githubUrl: "https://github.com/Sohee119/Prototype_MT",
       liveUrl: "",
-      status: "in-progress",
+      status: "featured",
     },
     {
       slug: "data-analytics-dashboard",
@@ -165,8 +172,8 @@ export const site = {
   ] satisfies Project[],
   education: {
     degree: "Bachelor of Science in Computer Science",
-    university: "University name", // <-- Update this
-    graduationYear: "2024", // <-- Update this
+    university: "Camarines Sur Polytechnic Colleges", 
+    graduationYear: "2026", 
     coursework: [] as string[],
     achievements: [] as string[],
   },
@@ -176,12 +183,20 @@ export const site = {
     date: string;
     credentialUrl: string;
   }[],
-  githubRepos: [] as {
-    name: string;
-    description: string;
-    language: string;
-    url: string;
-  }[],
+  githubRepos: [
+    {
+      name: "mynaga-crud-app",
+      description: "Case management web application built with Next.js, TypeScript, Tailwind CSS, and Supabase.",
+      language: "TypeScript",
+      url: "https://github.com/Sohee119/mynaga-crud-app",
+    },
+    {
+      name: "Prototype_MT",
+      description: "AI-Driven Synthetic Data for Low-Resource Machine Translation: Enhancing Rinconada to English Translation.",
+      language: "Python",
+      url: "https://github.com/Sohee119/Prototype_MT",
+    },
+  ],
 } as const;
 
 export function getProject(slug: string) {

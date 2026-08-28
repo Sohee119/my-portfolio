@@ -1,76 +1,66 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import React from "react";
 
-type FadeInProps = {
-  children: ReactNode;
+interface FadeInProps {
+  children: React.ReactNode;
+  direction?: "up" | "down" | "left" | "right" | "none";
+  delay?: number;
+  duration?: number;
   className?: string;
-  delayMs?: number;
-};
+  viewportAmount?: number;
+}
 
-export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+export function FadeIn({
+  children,
+  direction = "up",
+  delay = 0,
+  duration = 0.7,
+  className = "",
+  viewportAmount = 0.2,
+}: FadeInProps) {
+  const shouldReduceMotion = useReducedMotion();
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
+  const getOffset = () => {
+    switch (direction) {
+      case "up":
+        return { y: 30 };
+      case "down":
+        return { y: -30 };
+      case "left":
+        return { x: 30 };
+      case "right":
+        return { x: -30 };
+      case "none":
+      default:
+        return {};
     }
+  };
 
-    const checkVisibility = () => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
-        setVisible(true);
-        return true;
-      }
-      return false;
-    };
+  const initial = shouldReduceMotion
+    ? { opacity: 1, x: 0, y: 0 }
+    : { opacity: 0, ...getOffset() };
 
-    if (checkVisibility()) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0, rootMargin: "150px 0px 150px 0px" }
-    );
-
-    observer.observe(element);
-
-    const handleForceShow = () => {
-      setVisible(true);
-      observer.disconnect();
-    };
-
-    window.addEventListener("hashchange", handleForceShow, { passive: true });
-    window.addEventListener("scroll", checkVisibility, { passive: true });
-
-    const timer = setTimeout(checkVisibility, 200);
-
-    return () => {
-      observer.disconnect();
-      clearTimeout(timer);
-      window.removeEventListener("hashchange", handleForceShow);
-      window.removeEventListener("scroll", checkVisibility);
-    };
-  }, []);
+  const animate = {
+    opacity: 1,
+    x: 0,
+    y: 0,
+  };
 
   return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delayMs}ms` }}
-      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-      } ${className}`}
+    <motion.div
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: viewportAmount }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : duration,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
