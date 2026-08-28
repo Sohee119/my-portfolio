@@ -13,16 +13,18 @@ export function ThemeToggle() {
   }, []);
 
   function toggleTheme() {
-    const nextDark = !isDark;
-    setIsDark(nextDark);
+    const root = document.documentElement;
+    const willBeDark = !root.classList.contains("dark");
 
-    if (nextDark) {
-      document.documentElement.classList.add("dark");
+    if (willBeDark) {
+      root.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+
+    setIsDark(willBeDark);
   }
 
   if (!mounted) {

@@ -16,11 +16,21 @@ export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
     const element = ref.current;
     if (!element) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setVisible(true);
       return;
     }
+
+    const checkVisibility = () => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 200 && rect.bottom > -200) {
+        setVisible(true);
+        return true;
+      }
+      return false;
+    };
+
+    if (checkVisibility()) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -29,22 +39,27 @@ export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
           observer.disconnect();
         }
       },
-      {
-        threshold: 0.01, // Trigger as soon as 1% is visible
-        rootMargin: "50px 0px 50px 0px", // Trigger slightly before it enters the viewport
-      }
+      { threshold: 0, rootMargin: "150px 0px 150px 0px" }
     );
 
     observer.observe(element);
 
-    // Fallback: Check immediately if element is in viewport on jump/load
-    const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
+    const handleForceShow = () => {
       setVisible(true);
       observer.disconnect();
-    }
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("hashchange", handleForceShow, { passive: true });
+    window.addEventListener("scroll", checkVisibility, { passive: true });
+
+    const timer = setTimeout(checkVisibility, 200);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", handleForceShow);
+      window.removeEventListener("scroll", checkVisibility);
+    };
   }, []);
 
   return (
@@ -52,7 +67,7 @@ export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
       ref={ref}
       style={{ transitionDelay: `${delayMs}ms` }}
       className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       } ${className}`}
     >
       {children}
