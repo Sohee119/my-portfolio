@@ -38,7 +38,6 @@ const skillCategories: SkillCategory[] = [
       "Python for Data",
       "AI APIs",
       "Machine Learning fundamentals",
-      "Web Accessibility (a11y)",
     ],
   },
 ];
