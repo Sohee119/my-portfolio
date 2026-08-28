@@ -24,7 +24,7 @@ export function Hero() {
           {/* Badge */}
           <FadeIn delay={0.1}>
             <p className="inline-flex items-center rounded-full border border-stone-300 bg-stone-200/60 px-3 py-1 text-xs font-semibold tracking-wide text-stone-800 uppercase dark:border-emerald-800/40 dark:bg-emerald-950/60 dark:text-emerald-300">
-              Open to internships and junior roles
+              Actively seeking for Entry-Level and Technical Roles
             </p>
           </FadeIn>
 
