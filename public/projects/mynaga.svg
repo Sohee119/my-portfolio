@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="MyNaga case management visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="90" y="80" width="280" height="340" rx="18" fill="#ecfdf5" opacity="0.95"/>
+  <rect x="120" y="120" width="220" height="16" rx="8" fill="#0f766e"/>
+  <rect x="120" y="160" width="180" height="12" rx="6" fill="#99f6e4"/>
+  <rect x="120" y="190" width="200" height="12" rx="6" fill="#99f6e4"/>
+  <rect x="120" y="230" width="220" height="140" rx="12" fill="#ccfbf1"/>
+  <rect x="430" y="110" width="260" height="280" rx="18" fill="#042f2e" opacity="0.7"/>
+  <circle cx="470" cy="160" r="10" fill="#5eead4"/>
+  <rect x="500" y="152" width="150" height="16" rx="8" fill="#99f6e4"/>
+  <circle cx="470" cy="220" r="10" fill="#5eead4"/>
+  <rect x="500" y="212" width="170" height="16" rx="8" fill="#99f6e4"/>
+  <circle cx="470" cy="280" r="10" fill="#5eead4"/>
+  <rect x="500" y="272" width="140" height="16" rx="8" fill="#99f6e4"/>
+  <text x="90" y="60" fill="#ccfbf1" font-family="ui-sans-serif, system-ui" font-size="22">Case records</text>
+</svg>
