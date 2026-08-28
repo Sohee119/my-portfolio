@@ -87,7 +87,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
+      <body className="bg-slate-100/70 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
         {children}
       </body>
     </html>
