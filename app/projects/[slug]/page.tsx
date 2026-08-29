@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{project.name}</h1>
-          {project.status === "in-progress" ? (
+          {(project.status as string) === "in-progress" ? (
             <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-medium text-amber-800 dark:bg-amber-400/15 dark:text-amber-300">
               In Progress
             </span>

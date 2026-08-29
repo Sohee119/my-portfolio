@@ -44,7 +44,7 @@ export function Projects() {
                 {/* Project Header / Badges */}
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-xs font-semibold tracking-wider text-stone-700 uppercase dark:text-emerald-400">
-                    {project.status.replace("-", " ")}
+                    {project.status?.replace("-", " ") ?? "featured"}
                   </span>
                   <div className="flex items-center gap-3">
                     {project.githubUrl && (
