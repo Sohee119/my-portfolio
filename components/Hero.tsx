@@ -1,114 +1,81 @@
 "use client";
 
-import { motion } from "motion/react";
-import { ArrowDownRight, Download, Mail } from "lucide-react";
-import { site } from "@/lib/site";
-import { SocialLinks } from "@/components/SocialLinks";
-import { FadeIn } from "@/components/FadeIn";
+import Link from "next/link";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { ArrowUpRight, Download, Mail } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-[#FBF9F5] transition-colors duration-200 dark:bg-[#0F1410]">
-      {/* Background Grids & Subtle Atmospheric Radial Overlays */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(180,160,120,0.12),transparent_42%),radial-gradient(circle_at_bottom_left,rgba(120,130,100,0.08),transparent_40%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(88,110,79,0.25),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(28,38,29,0.4),transparent_50%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(to_right,rgba(100,90,80,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(100,90,80,0.08)_1px,transparent_1px)] [background-size:44px_44px] dark:opacity-20 dark:[background-image:linear-gradient(to_right,rgba(180,200,160,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(180,200,160,0.08)_1px,transparent_1px)]"
-      />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-6 py-20 transition-colors duration-300 dark:bg-[#080d0a]">
+      {/* 1. Background Animation Layer */}
+      <AnimatedBackground />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
-        <div>
-          {/* Badge */}
-          <FadeIn delay={0.1}>
-            <p className="inline-flex items-center rounded-full border border-stone-300 bg-stone-200/60 px-3 py-1 text-xs font-semibold tracking-wide text-stone-800 uppercase dark:border-emerald-800/40 dark:bg-emerald-950/60 dark:text-emerald-300">
-              Actively seeking for Entry-Level and Technical Roles
-            </p>
-          </FadeIn>
+      {/* 2. Main Hero Content Layer */}
+      <div className="relative z-10 w-full max-w-6xl">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+          
+          {/* Left Text Content */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              ACTIVELY SEEKING FOR ENTRY-LEVEL AND TECHNICAL ROLES
+            </div>
 
-          {/* Title */}
-          <FadeIn delay={0.25}>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-6xl dark:text-stone-100">
-              {site.hero.greeting}
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
+              Hi, I'm Paolo Espion.
             </h1>
-          </FadeIn>
 
-          {/* Subtitle */}
-          <FadeIn delay={0.35}>
-            <p className="mt-4 text-lg font-semibold text-stone-800 sm:text-xl dark:text-emerald-200/90">
-              {site.title}
+            <p className="mt-4 text-lg font-semibold text-emerald-600 dark:text-emerald-400 sm:text-xl">
+              Computer Science Graduate | Aspiring Software Engineer & AI Engineer
             </p>
-          </FadeIn>
 
-          {/* Description */}
-          <FadeIn delay={0.45}>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-stone-700 dark:text-stone-300">
-              {site.hero.description}
+            <p className="mt-6 text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">
+              I am a Computer Science graduate passionate about software development, data analytics, artificial intelligence, and building practical technology solutions. I enjoy learning new technologies, solving problems, and turning ideas into functional applications. I am currently building my skills and portfolio while looking for opportunities to start my professional career in IT.
             </p>
-          </FadeIn>
 
-          {/* Action Buttons */}
-          <FadeIn delay={0.55}>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <motion.a
+            {/* Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
                 href="#projects"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.15 }}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-stone-900 px-5 py-3 text-sm font-medium text-stone-100 shadow-sm transition-colors hover:bg-stone-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 dark:bg-emerald-700 dark:text-emerald-50 dark:hover:bg-emerald-600 dark:shadow-emerald-950/50"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
               >
                 View My Projects
-                <ArrowDownRight className="h-4 w-4" />
-              </motion.a>
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
 
-              <motion.a
-                href={site.resumePath}
-                download="ESPION_RESUME.pdf"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.15 }}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-stone-100/90 px-5 py-3 text-sm font-medium text-stone-900 shadow-sm transition-colors hover:border-stone-400 hover:bg-stone-200/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 dark:border-emerald-800/60 dark:bg-[#141A15] dark:text-stone-200 dark:hover:border-emerald-600 dark:hover:bg-[#1A231C]"
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-[#1e2820] dark:bg-[#111813] dark:text-gray-300 dark:hover:bg-[#162019]"
               >
                 <Download className="h-4 w-4" />
                 Download Resume
-              </motion.a>
+              </a>
 
-              <motion.a
-                href={`mailto:${site.email}`}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.15 }}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-5 py-3 text-sm font-semibold text-stone-800 transition-colors hover:bg-stone-200/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 dark:text-emerald-400 dark:hover:bg-emerald-950/40"
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:underline dark:text-emerald-400"
               >
                 <Mail className="h-4 w-4" />
                 Contact Me
-              </motion.a>
+              </Link>
             </div>
-          </FadeIn>
+          </div>
 
-          {/* Social Links */}
-          <FadeIn delay={0.65}>
-            <div className="mt-8">
-              <SocialLinks />
-            </div>
-          </FadeIn>
-        </div>
-
-        {/* Terminal Window Widget */}
-        <FadeIn delay={0.4}>
-          <div className="relative">
-            <div className="rounded-2xl border border-stone-300 bg-[#F3EFE6] p-5 shadow-xl dark:border-emerald-900/60 dark:bg-[#090D0A] dark:shadow-emerald-950/40">
-              <div className="mb-4 flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-600 dark:bg-emerald-500" />
-                <span className="h-2.5 w-2.5 rounded-full bg-stone-400 dark:bg-stone-700" />
-                <span className="h-2.5 w-2.5 rounded-full bg-stone-400 dark:bg-stone-700" />
-                <span className="ml-2 font-mono text-xs text-stone-600 dark:text-emerald-400/80">paolo.ts</span>
+          {/* Right Code Block Card */}
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl border border-gray-200/80 bg-[#111813] p-6 shadow-xl dark:border-[#1e2820]">
+              <div className="flex items-center justify-between border-b border-gray-800 pb-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-emerald-500" />
+                  <span className="h-3 w-3 rounded-full bg-gray-600" />
+                  <span className="h-3 w-3 rounded-full bg-gray-600" />
+                </div>
+                <span className="text-xs font-mono text-gray-400">paolo.ts</span>
               </div>
-              <pre className="overflow-x-auto font-mono text-[13px] leading-6 text-stone-800 dark:text-emerald-100/90">
+
+              <pre className="mt-4 overflow-x-auto font-mono text-xs leading-relaxed text-emerald-400">
                 <code>
-                  {`const paolo = {
+{`const paolo = {
   role: "Software & AI Engineer",
   education: "BS Computer Science",
   stack: ["Python", "TypeScript", "SQL"],
@@ -119,7 +86,8 @@ export function Hero() {
               </pre>
             </div>
           </div>
-        </FadeIn>
+
+        </div>
       </div>
     </section>
   );
