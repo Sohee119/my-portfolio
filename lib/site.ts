@@ -165,9 +165,9 @@ export const site = {
         "Business insights",
       ],
       image: "/projects/analytics-dashboard.svg",
-      githubUrl: "",
+      githubUrl: "https://github.com/Sohee119/data-analytics-dashboard",
       liveUrl: "",
-      status: "in-progress",
+      status: "featured",
     },
   ] satisfies Project[],
   education: {
