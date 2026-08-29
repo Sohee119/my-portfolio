@@ -197,7 +197,7 @@ export const site = {
       url: "https://github.com/Sohee119/Prototype_MT",
     },
   ],
-} as const;
+};
 
 export function getProject(slug: string) {
   return site.projects.find((project) => project.slug === slug);
