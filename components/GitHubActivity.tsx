@@ -1,15 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
+import { site } from "@/lib/site";
+import { ExternalLink, FolderGit2 } from "lucide-react";
 
-const YEARS = [2026, 2025, 2024];
-const USERNAME = "Sohee119";
+const USERNAME = site.githubUsername || "Sohee119";
+
+interface Repo {
+  name: string;
+  description: string;
+  language: string;
+  url: string;
+}
 
 export function GitHubActivity() {
-  const [selectedYear, setSelectedYear] = useState(2026);
-
   return (
     <section
       id="github"
@@ -19,8 +24,8 @@ export function GitHubActivity() {
         <FadeIn direction="up">
           <SectionHeading
             eyebrow="GITHUB"
-            title="Contribution Activity"
-            description="Live open-source contributions, repositories, and GitHub statistics."
+            title="GitHub Repositories"
+            description="Explore my latest open-source code and projects."
           />
         </FadeIn>
 
@@ -59,44 +64,46 @@ export function GitHubActivity() {
                 </a>
               </div>
 
-              {/* Contribution Activity Section */}
+              {/* Repositories Grid Section */}
               <div className="mt-6">
                 <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                  Contribution activity
+                  Featured Repositories
                 </h4>
 
-                <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-start">
-                  
-                  {/* Calendar Heatmap Wrapper */}
-                  <div className="flex-1 overflow-x-auto rounded-xl border border-gray-200/60 bg-white p-4 dark:border-[#1e2820] dark:bg-[#0b100d]">
-                    <img
-                      key={selectedYear}
-                      src={`https://ghchart.rshah.org/059669/${USERNAME}`}
-                      alt={`${USERNAME}'s Github Contributions in ${selectedYear}`}
-                      className="w-full min-w-[650px] filter dark:brightness-110"
-                    />
-                  </div>
+                <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {site.githubRepos.map((repo: Repo) => (
+                    <a
+                      key={repo.name}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-col justify-between rounded-xl border border-gray-200/60 bg-white p-5 transition-all hover:border-emerald-500/50 hover:shadow-md dark:border-[#1e2820] dark:bg-[#0b100d] dark:hover:border-emerald-500/40"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2.5">
+                            <FolderGit2 className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                            <h5 className="text-sm font-bold text-gray-900 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                              {repo.name}
+                            </h5>
+                          </div>
+                          <ExternalLink className="h-4 w-4 text-gray-400 transition-colors group-hover:text-gray-600 dark:group-hover:text-gray-200" />
+                        </div>
+                        <p className="mt-2.5 text-xs leading-relaxed text-gray-600 dark:text-gray-300">
+                          {repo.description}
+                        </p>
+                      </div>
 
-                  {/* Year Filter List */}
-                  <div className="flex flex-wrap gap-1.5 lg:w-32 lg:flex-col">
-                    {YEARS.map((year) => {
-                      const isActive = selectedYear === year;
-                      return (
-                        <button
-                          key={year}
-                          onClick={() => setSelectedYear(year)}
-                          className={`rounded-lg px-3 py-1.5 text-left text-xs font-medium transition-all ${
-                            isActive
-                              ? "bg-emerald-600 text-white shadow-xs dark:bg-emerald-600 dark:text-white"
-                              : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-[#162019] dark:hover:text-gray-200"
-                          }`}
-                        >
-                          {year}
-                        </button>
-                      );
-                    })}
-                  </div>
-
+                      <div className="mt-4 flex items-center justify-between pt-3 border-t border-gray-100 dark:border-[#1e2820]">
+                        <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                          {repo.language}
+                        </span>
+                        <span className="text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
+                          View →
+                        </span>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
 

@@ -94,35 +94,6 @@ export const site = {
   ],
   projects: [
     {
-      slug: "mynaga-crud-webapp",
-      name: "MyNaga CRUD WebApp",
-      summary:
-        "An internal case management web application designed to help government staff manage and organize case records efficiently.",
-      description:
-        "MyNaga is a case management web app built to help staff create, update, search, and review case records in one place. The project focuses on practical workflows: structured CRUD operations, filtering, a case timeline, and PDF reporting for day-to-day use.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Supabase/PostgreSQL",
-        "NextAuth.js",
-        "Google Sheets API",
-      ],
-      features: [
-        "Case management",
-        "CRUD operations",
-        "Search and filtering",
-        "Case timeline",
-        "PDF report generation",
-        "Batch PDF export",
-        "Authentication",
-      ],
-      image: "/projects/mynaga.svg",
-      githubUrl: "https://github.com/Sohee119/mynaga-crud-app",
-      liveUrl: "",
-      status: "featured",
-    },
-    {
       slug: "ai-rinconada-translation-synthetic-data",
       name: "AI-Driven Synthetic Data for Low-Resource Machine Translation: Enhancing Rinconada to English Translation",
       summary:
@@ -185,16 +156,16 @@ export const site = {
   }[],
   githubRepos: [
     {
-      name: "mynaga-crud-app",
-      description: "Case management web application built with Next.js, TypeScript, Tailwind CSS, and Supabase.",
-      language: "TypeScript",
-      url: "https://github.com/Sohee119/mynaga-crud-app",
-    },
-    {
       name: "Prototype_MT",
       description: "AI-Driven Synthetic Data for Low-Resource Machine Translation: Enhancing Rinconada to English Translation.",
       language: "Python",
       url: "https://github.com/Sohee119/Prototype_MT",
+    },
+    {
+      name: "data-analytics-dashboard",
+      description: "An interactive dashboard that analyzes datasets and presents useful insights through charts, KPIs, and tables.",
+      language: "Python",
+      url: "https://github.com/Sohee119/data-analytics-dashboard",
     },
   ],
 };
