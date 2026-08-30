@@ -94,6 +94,31 @@ export const site = {
   ],
   projects: [
     {
+      slug: "kpop-dashboard",
+      name: "K-Pop Dashboard",
+      summary:
+        "An interactive analytics dashboard tracking K-pop trends, metrics, and data visualizations.",
+      description:
+        "A feature-rich web dashboard built to analyze and present K-pop industry metrics, streaming trends, and data statistics through clean visual charts and responsive UI components.",
+      technologies: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Data Visualization",
+      ],
+      features: [
+        "Interactive data visualizations",
+        "Trend analysis metrics",
+        "Responsive grid layout",
+        "Dark/Light mode support",
+      ],
+      image: "/projects/kpop-dashboard.svg",
+      githubUrl: "https://github.com/Sohee119/kpop-dashboard",
+      liveUrl: "",
+      status: "featured",
+    },
+    {
       slug: "ai-rinconada-translation-synthetic-data",
       name: "AI-Driven Synthetic Data for Low-Resource Machine Translation: Enhancing Rinconada to English Translation",
       summary:
@@ -155,6 +180,12 @@ export const site = {
     credentialUrl: string;
   }[],
   githubRepos: [
+    {
+      name: "kpop-dashboard",
+      description: "An interactive analytics dashboard tracking K-pop trends, metrics, and data visualizations.",
+      language: "TypeScript",
+      url: "https://github.com/Sohee119/kpop-dashboard",
+    },
     {
       name: "Prototype_MT",
       description: "AI-Driven Synthetic Data for Low-Resource Machine Translation: Enhancing Rinconada to English Translation.",
