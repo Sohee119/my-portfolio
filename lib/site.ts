@@ -94,6 +94,23 @@ export const site = {
   ],
   projects: [
     {
+      slug: "eatmate",
+      name: "EatMate",
+      summary: "A modern dining companion and buddy discovery web application built with Next.js and Supabase.",
+      description: "A modern dining companion and buddy discovery web application built with Next.js and Supabase, designed to help users find dining partners and chat in real time.",
+      technologies: ["Next.js", "React", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      features: [
+        "User Authentication: Secure sign-up and sign-in workflows powered by Supabase Auth.",
+        "Profile Management: Customizable user profiles including location and food preferences.",
+        "Find a Buddy: Discover and connect with other users in your area to share meals.",
+        "Real-Time Messaging: Chat seamlessly with your connected matches through a dedicated messaging system.",
+      ],
+      image: "/projects/eatmate.svg",
+      githubUrl: "https://github.com/Sohee119/eatmate",
+      liveUrl: "",
+      status: "featured",
+    },
+    {
       slug: "kpop-dashboard",
       name: "K-Pop Dashboard",
       summary:
@@ -180,6 +197,12 @@ export const site = {
     credentialUrl: string;
   }[],
   githubRepos: [
+    {
+      name: "eatmate",
+      description: "A modern dining companion and buddy discovery web application built with Next.js and Supabase.",
+      language: "TypeScript",
+      url: "https://github.com/Sohee119/eatmate",
+    },
     {
       name: "kpop-dashboard",
       description: "An interactive analytics dashboard tracking K-pop trends, metrics, and data visualizations.",
