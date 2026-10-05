@@ -34,21 +34,23 @@ I am **Paolo Espion**, a **Computer Science graduate** and aspiring **Software &
 
 ---
 
-## 🚀 Getting Started
-
-### **Prerequisites**
-Ensure you have **Node.js 18+** installed on your syst
 
 Technical Goals
+
 I am actively focused on advancing my expertise in:
+
 
 Full-stack software architecture and scalable system design
 
+
 Artificial Intelligence, Machine Learning integration, and Large Language Model applications
+
 
 Data visualization, relational database management, and cloud infrastructure
 
+
 Connect With Me
+
 GitHub: github.com/Sohee119
 
 LinkedIn: linkedin.com/in/paolo-espion
