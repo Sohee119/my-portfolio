@@ -92,7 +92,7 @@ My goal is to build practical projects, contribute to real-world applications, a
 
 * **GitHub:** [[Your GitHub](https://github.com/Sohee119)]
 * **LinkedIn:** [[Your LinkedIn](https://www.linkedin.com/in/paolo-espion/)]
-* **Email:** [Your Email]
+* **Email:** [pao.espion@gmail.com]
 
 ---
 
