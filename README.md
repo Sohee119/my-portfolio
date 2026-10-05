@@ -1,99 +1,56 @@
-# Paolo Espion — Portfolio
+# Paolo Espion — Personal Portfolio
 
-Welcome to my personal portfolio! 👋
+Welcome to my portfolio repository! 👋
 
-I'm **Paolo Espion**, a **Computer Science graduate** and aspiring **Software Engineer & AI Engineer**. This portfolio showcases my projects, technical skills, certifications, and journey as I continue developing my career in technology.
-
-## 🚀 Tech Stack
-
-* **Next.js**
-* **TypeScript**
-* **React**
-* **Tailwind CSS**
-* **HTML & CSS**
-* **Git & GitHub**
-
-## ✨ Features
-
-* Responsive and modern portfolio design
-* About Me section
-* Technical skills showcase
-* Featured projects
-* Certifications
-* GitHub repositories
-* Contact and social links
-* Smooth animations and interactive UI
-
-## 🛠️ Run Locally
-
-Clone the repository and install the dependencies:
-
-```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:3000
-```
-
-## ⚙️ Customize
-
-Portfolio information can be updated from:
-
-```text
-lib/site.ts
-```
-
-You can customize:
-
-* 📧 Email, GitHub, and LinkedIn URLs
-* 🎓 University and graduation information
-* 📚 Coursework and achievements
-* 💻 Technical skills
-* 🚀 Project information and links
-* 📜 Certifications
-* 🐙 GitHub repositories
-
-## 📂 Project Structure
-
-```text
-├── app/
-├── components/
-├── lib/
-│   └── site.ts
-├── public/
-├── package.json
-└── README.md
-```
-
-## 🎯 Goals
-
-I'm continuously improving my skills in:
-
-* Software Engineering
-* Artificial Intelligence
-* Data & Backend Development
-* Cloud Technologies
-* Problem Solving
-
-My goal is to build practical projects, contribute to real-world applications, and grow into a well-rounded **Software & AI Engineer**.
-
-## 📫 Connect With Me
-
-* **GitHub:** [[Your GitHub](https://github.com/Sohee119)]
-* **LinkedIn:** [[Your LinkedIn](https://www.linkedin.com/in/paolo-espion/)]
-* **Email:** [pao.espion@gmail.com]
+I am **Paolo Espion**, a **Computer Science graduate** and aspiring **Software & AI Engineer**. This site showcases my full-stack web applications, AI-driven projects, technical capabilities, and professional background.
 
 ---
 
-⭐ If you find this portfolio interesting, feel free to explore the repository and check out my projects.
+## 🛠️ Tech Stack
+
+### **Languages**
+* Python, TypeScript, JavaScript, SQL
+
+### **Frontend**
+* React, Next.js, Tailwind CSS
+
+### **Backend & Databases**
+* Node.js, REST APIs, Supabase, PostgreSQL, MySQL
+
+### **AI, ML & Data**
+* OpenAI, PyTorch, Hugging Face, Pandas, NumPy, Excel
+
+### **Development & Deployment**
+* Git, GitHub, Vercel, Render, VS Code
+
+---
+
+## ✨ Features
+
+* **Modern & Responsive UI:** Optimized for desktop, tablet, and mobile viewing.
+* **Featured Projects Showcase:** Full-stack and AI experiments with live previews and repository links.
+* **Interactive Resume & Skills:** Organized overview of tech competencies, certifications, and academic background.
+* **Dark Mode & Smooth Animations:** Designed with a clean, minimalist user experience.
+
+---
+
+## 🚀 Getting Started
+
+### **Prerequisites**
+Ensure you have **Node.js 18+** installed on your syst
+
+Technical Goals
+I am actively focused on advancing my expertise in:
+
+Full-stack software architecture and scalable system design
+
+Artificial Intelligence, Machine Learning integration, and Large Language Model applications
+
+Data visualization, relational database management, and cloud infrastructure
+
+Connect With Me
+GitHub: github.com/Sohee119
+
+LinkedIn: linkedin.com/in/paolo-espion
+
+Email: pao.espion@gmail.com
