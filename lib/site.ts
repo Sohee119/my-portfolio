@@ -204,10 +204,10 @@ export const site = {
       url: "https://github.com/Sohee119/eatmate",
     },
     {
-      name: "kpop-dashboard",
-      description: "An interactive analytics dashboard tracking K-pop trends, metrics, and data visualizations.",
-      language: "TypeScript",
-      url: "https://github.com/Sohee119/kpop-dashboard",
+      name: "ai-threat-platform",
+      description: "A cloud-native, real-time Threat Intelligence and Security Operations Center (SOC) platform powered by machine learning.",
+      language: "TypeScript, Python",
+      url: "https://github.com/Sohee119/AI-Threat-Platform",
     },
     {
       name: "Prototype_MT",
