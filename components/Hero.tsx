@@ -21,11 +21,11 @@ export function Hero() {
             </div>
 
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
-              Hi, I'm Paolo Espion.
+              Hi, I&apos;m Paolo Espion.
             </h1>
 
             <p className="mt-4 text-lg font-semibold text-emerald-600 dark:text-emerald-400 sm:text-xl">
-              Computer Science Graduate | Aspiring Software Engineer & AI Engineer
+              Computer Science Graduate | Aspiring Software Engineer &amp; AI Engineer
             </p>
 
             <p className="mt-6 text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">
@@ -43,7 +43,7 @@ export function Hero() {
               </Link>
 
               <a
-                href="/resume.pdf"
+                href="/ESPION_RESUME.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 dark:border-[#1e2820] dark:bg-[#111813] dark:text-gray-300 dark:hover:bg-[#162019]"
               >
@@ -61,29 +61,20 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Code Block Card */}
-          <div className="lg:col-span-5">
-            <div className="rounded-2xl border border-gray-200/80 bg-[#111813] p-6 shadow-xl dark:border-[#1e2820]">
-              <div className="flex items-center justify-between border-b border-gray-800 pb-4">
-                <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-emerald-500" />
-                  <span className="h-3 w-3 rounded-full bg-gray-600" />
-                  <span className="h-3 w-3 rounded-full bg-gray-600" />
-                </div>
-                <span className="text-xs font-mono text-gray-400">paolo.ts</span>
+          {/* Right Profile Photo */}
+          <div className="flex justify-center lg:col-span-5 lg:justify-end">
+            <div className="relative h-72 w-72 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+              {/* Subtle Emerald Glow Behind Image */}
+              <div className="absolute -inset-2 rounded-full bg-emerald-500/20 blur-2xl" />
+              
+              {/* Circular Framed Image */}
+              <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-emerald-500/40 bg-[#111813] shadow-2xl">
+                <img
+                  src="/profile.jpg"
+                  alt="Paolo Espion"
+                  className="h-full w-full object-cover object-top"
+                />
               </div>
-
-              <pre className="mt-4 overflow-x-auto font-mono text-xs leading-relaxed text-emerald-400">
-                <code>
-{`const paolo = {
-  role: "Software & AI Engineer",
-  education: "BS Computer Science",
-  stack: ["Python", "TypeScript", "SQL"],
-  focus: ["Apps", "Data", "AI"],
-  status: "Open to opportunities",
-};`}
-                </code>
-              </pre>
             </div>
           </div>
 
